@@ -1,0 +1,66 @@
+html {
+    background-color: white;
+}
+
+body {
+    font: 1.2em / 1.5 system-ui;
+    padding: 20px;
+    width: 500px;
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #bfa2b623, #bfa2b694);
+    border:#bc9d8048 5px solid;
+    border-radius: 20px;
+}
+
+ul {
+    background-color: white;
+    border: #b1afaf 5px solid;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+h1 {
+    text-align: left;
+    color: #625372;
+    border-bottom: #b1afaf 10px dotted;
+    font-size: 2rem;
+}
+
+h2 {
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+div.job-title {
+    font-weight: bold;
+    color: #625372;
+}
+
+a:link {
+    color: #9858ddaf;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #39025eee;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 2px dashed #00000054;
+    outline-offset: 3px;
+    text-decoration: none;
+}
+
+p:hover {
+    background-color: #bfa2b623;
+    border-radius: 10px;
+}
+
+body::selection {
+    background-color: #bfa2b6;
+    color: white;
+}
