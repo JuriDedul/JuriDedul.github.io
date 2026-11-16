@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en-US">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="Author" content="Juri Dedul" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="Description" content="Juri Dedul`s webpage serving as a testing playground for new ideas and as a demostration of things =)" />
+
+        <title>Juri Dedul`s TEST Webpage</title>
+        
+        <link href="/style.css" type="text/css" rel="stylesheet" />
+
+        <!-- Fetching fonts from Google Fonts (they are free to) -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Honk:MORF@15&family=Lora:ital,wght@0,400..700;1,400..700&family=Nanum+Gothic&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&family=Honk:MORF@15&family=Nanum+Gothic&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+    <header>
+      <h1>Juri Dedul`s Webpage</h1>
+    </header>
+
+    <main class="wide">
+      
+      <!-- Photo section of 3d prints -->
+      <section class="gallery">
+
+        <a href="images/lenin1.jpg">
+        <img class="3dprinted_photo", src="images/lenin1.jpg", alt="Lenin bust" />
+        </a>
+        <a href="images/chess.jpg">
+        <img class="3dprinted_photo", src="images/chess.jpg", alt="chess board with chess figures on it" />
+        </a>
+        <a href="images/chess_rook.jpg">
+        <img class="3dprinted_photo", src="images/chess_rook.jpg", alt="schess rook closeup photo" />
+        </a>
+        <a href="images/kitten_figure.png">
+        <img class="3dprinted_photo", src="images/kitten_figure.png", alt="small kitten figure" />
+        </a>
+        <a href="images/soapholder.png">
+        <img class="3dprinted_photo", src="images/soapholder.png", alt="soapholder" />
+        </a>
+        <a href="images/hinge.png">
+        <img class="3dprinted_photo", src="images/hinge.png", alt="small hinge" />
+        </a>
+        
+        
+
+      </section>
+        
+      <!-- Buttons on the right of the screen -->
+      <nav>
+        <ul>
+          <li><a href="../">Home</a></li>
+          <li><a href="./">3D-Printing</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Latest music</a></li>
+          <li><a href="https://www.linkedin.com/in/juridedul/" id="linkedinbutasaston">LinkedIn</a></li>
+          <li id="rickroll"><a href="#">Roll</a></li>
+        </ul>
+      </nav>
+    </main>
+
+    <!-- RICKROLL SECTION -->
+    <footer>
+      <p>&copy; 1756 - 2026 Juri the Dedul inc. | All rights reserved</p>
+    </footer>
+
+    <dialog id="video-dialog">  
+      <video src="../video/rickroll.mp4" controls></video>
+      <form method="dialog"><button>Закрыть</button></form>
+    </dialog>
+
+    <script>
+      const dialog = document.getElementById('video-dialog');
+      const video = dialog.querySelector('video');
+
+      document.querySelector('#rickroll a').addEventListener('click', (e) => {
+        e.preventDefault();
+        dialog.showModal();
+        video.volume = 0.5;
+        video.play();
+      });
+
+      dialog.addEventListener('close', () => video.pause());
+    </script>
+
+    <!-- Gallery script section -->
+
+    <dialog id="image-dialog">
+    <img alt="">
+    </dialog>
+
+    <script>
+      const imgDialog = document.getElementById('image-dialog');
+      const bigImg = imgDialog.querySelector('img');
+
+      document.querySelectorAll('.gallery a').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          bigImg.src = link.href;
+          bigImg.alt = link.querySelector('img').alt;
+          imgDialog.showModal();
+        });
+      });
+
+      // клик в любое место (по картинке или по затемнению) закрывает окно
+      imgDialog.addEventListener('click', () => imgDialog.close());
+    </script>
+
+  </body>
+</html>
+

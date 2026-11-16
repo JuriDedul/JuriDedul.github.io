@@ -20,7 +20,7 @@ textarea {
 }
 
 html {
-  background: #f3f3f3 url("/image/waves.svg") center / cover no-repeat fixed;
+  background: #f3f3f3 url("image/waves.svg") center / cover no-repeat fixed;
 }
 
 body {
@@ -109,7 +109,7 @@ a:active {
   background-color: #344b5907;
 }
 
-a[href^="http"]::after {
+a[href^="http"]:not(nav a)::after {
 
   content: "";
   display: inline-block;
@@ -117,7 +117,7 @@ a[href^="http"]::after {
   height: 0.6em;
   margin-left: 0.25em;
 
-  background-image: url("/image/external-link-52.png");
+  background-image: url("image/external-link-52.png");
   background-size:100%;
   opacity: 0.8;
 }
@@ -163,4 +163,68 @@ nav a:active {
   color: #ce1f64;
 }
 
+main.wide section {
+  grid-column: span 2;
+}
 
+
+/* RICKROLL SECTION styling */
+dialog {
+  border: 1px solid #9c7104;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+dialog::backdrop {
+  background: #071924aa;
+}
+
+dialog video {
+  display: block;
+  width: 640px;
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+
+/* 3d printed gallery section */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.gallery a {
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.gallery img {
+  display: block;
+  width: 100%; 
+  height: 100%;   
+  object-fit: cover;    /* cut, not stretch image */
+  object-position: center; /* cut from the centre */
+  border-radius: 5px;
+}
+
+.gallery a:hover img {
+  opacity: 0.85;
+}
+
+#image-dialog {
+  padding: 0;
+  border: none;
+  background: transparent;
+  
+}
+
+#image-dialog img {
+  display: block;
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;  /* show entire picture without the cut */
+}

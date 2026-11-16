@@ -9,7 +9,7 @@
 
         <title>Juri Dedul`s TEST Webpage</title>
         
-        <link href="/style.css" type="text/css" rel="stylesheet" />
+        <link href="style.css" type="text/css" rel="stylesheet" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,10 +29,10 @@
 
         <p>
           I'm a graduate of TalTech, where I studied 
-          Integrated Engineering in an English-taught programme. During my studies,
+          <a href="https://taltech.ee/en/bachelors-programmes/integrated-engineering">Integrated Engineering</a> in an English-taught programme. During my studies,
           I took part in Erasmus+ exchanges in Poland and the Czech Republic,
-          including a semester at Czech Technical University in Prague. Outside university,
-          I've volunteered at Vaba Lava Narva and Tallinn Music Week, helping organise
+          including a semester at <a href="https://en.wikipedia.org/wiki/Czech_Technical_University_in_Prague">Czech Technical University in Prague</a>. Outside university,
+          I've volunteered at <a href="https://vabadusefestival.ee/">Vaba Lava Narva</a> and <a href="https://en.wikipedia.org/wiki/Tallinn_Music_Week">Tallinn Music Week</a>, helping organise
           events, and even performed in a historical production at Narva Castle.
                
         </p>
@@ -72,21 +72,23 @@
           love to hear from you:
         </p>
 
+        <!-- Contact data section -->
         <ol>
           <li>
-             <a href="#">E-mail</a> me for more
+             <a href="mailto:dedul93@gmail.com?subject=Referral%20from%20a%20website&amp;body=Hello%21">E-mail</a> me for more
             information.
           </li>
           <li>
-            Connect to my <a href="#">LinkedIn</a> profile.
+            Connect to my <a href="https://www.linkedin.com/in/juridedul/">LinkedIn</a> profile.
           </li>
-          <li>Or reach out via <a href="#">Telegram</a>!</li>
+          <li>Or reach out via <a href="https://t.me/juri4444">Telegram</a>!</li>
         </ol>
       </section>
 
       <aside>
         <h2>Recent activity</h2>
 
+        <!-- Recent projects section -->
         <ul>
           <li><a href="#">Webpage Update!</a></li>
           <li><a href="#">Chess (3d print)</a></li>
@@ -102,20 +104,43 @@
         <p><a href="#">See all...</a></p>
       </aside>
 
-      <nav>
+      <!-- Buttons on the right of the screen -->
+      <nav class="navbuttons">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">3D-Printing</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/3dprinting">3D-Printing</a></li>
           <li><a href="#">Projects</a></li>
           <li><a href="#">Latest music</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Roll</a></li>
+          <li><a href="https://www.linkedin.com/in/juridedul/" id="linkedinbutasaston">LinkedIn</a></li>
+          <li id="rickroll"><a href="#">Roll</a></li>
         </ul>
       </nav>
+
     </main>
 
+    <!-- RICKROLL SECTION -->
     <footer>
       <p>&copy; 1756 - 2026 Juri the Dedul inc. | All rights reserved</p>
     </footer>
+
+    <dialog id="video-dialog">  
+      <video src="/video/rickroll.mp4" controls></video>
+      <form method="dialog"><button>Закрыть</button></form>
+    </dialog>
+
+    <script>
+      const dialog = document.getElementById('video-dialog');
+      const video = dialog.querySelector('video');
+
+      document.querySelector('#rickroll a').addEventListener('click', (e) => {
+        e.preventDefault();
+        dialog.showModal();
+        video.volume = 0.5;
+        video.play();
+      });
+
+      dialog.addEventListener('close', () => video.pause());
+    </script>
+
   </body>
 </html>
